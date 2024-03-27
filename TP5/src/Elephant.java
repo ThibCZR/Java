@@ -41,7 +41,7 @@ public class Elephant extends Animal{
                 "\nPoids : " + poids + " " + UM_POIDS +               
                 "\nSexe : " + sexe +
                 "\nTaille : " + taille + " " + UM_TAILLE +
-                "\nAge : " + getAge() +
+                "\nAge : " + getAge() + UM_AGE +
                 "\nAdulte : " + estAdulte() +
                 "\nType : " + type +
                 "\nCri : " + cri() + " " + 
