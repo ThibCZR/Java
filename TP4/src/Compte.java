@@ -1,10 +1,10 @@
 public class Compte
 {
 	//ATTRIBUTS
-    private static final String monnaie="euros";
-    private static int numAuto=0;
-    private int numCpt;
-    private double solde;
+    protected static final String monnaie="euros";
+    protected static int numAuto=0;
+    protected int numCpt;
+    protected double solde;
     
 
 	//ACCESSEURS
@@ -20,18 +20,17 @@ public class Compte
     
     public static int getNumAutoSuivant() 
     {
-        // A COMPLETER
+        return numAuto + 1;
     }
     
 	//CONSTRUCTEURS
-	public Compte()
-    {
-        // A COMPLETER
+	public Compte() {
+        this.numCpt = ++numAuto;
     }
-    
-    public Compte(double solde)
-    {
-        // A COMPLETER
+
+    public Compte(double solde) {
+        this.solde = solde;
+        this.numCpt = ++numAuto;
     }
     
 
@@ -44,7 +43,12 @@ public class Compte
         if (o instanceof Compte)
         { 
             Compte c = (Compte) o;
-            // A COMPLETER
+            if (this.numCpt == c.numCpt && Double.compare(this.solde, c.solde) == 0)
+            {
+                return true; 
+            }
+            return true;
+            
         }
         return false;  
     }
