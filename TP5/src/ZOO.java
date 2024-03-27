@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class ZOO {      
     
@@ -10,7 +12,7 @@ public class ZOO {
 
     public void faitCrierSesAnimaux(ArrayList<Animal> Animaux) {
         for (Animal animal : Animaux) {
-            System.out.println(animal.cri() + "\n");
+            System.out.println(animal.cri());
         }
     }
 
@@ -42,8 +44,7 @@ public class ZOO {
             if (animal instanceof lCarnivore) {
                 lCarnivore carnivore = (lCarnivore) animal;
                 result.append(animal.getNom() + " : " + carnivore.proiesPreferees() + "\n");
-            }
-            
+            }            
         }
         return result.toString();        
     }
@@ -64,7 +65,23 @@ public class ZOO {
             return "Animal non trouvé.";
         }
     }
-    
+
+    public void trierAnimauxParDateNaissance(ArrayList<Animal> animaux, char lettre) {
+        Collections.sort(animaux, new Comparator<Animal>() {
+            @Override
+            public int compare(Animal animal1, Animal animal2) {
+                int result;
+                if (lettre == 'C') {
+                    result = Integer.compare(animal1.getAnneeNaissance(), animal2.getAnneeNaissance());
+                } else if (lettre == 'D') {
+                    result = Integer.compare(animal2.getAnneeNaissance(), animal1.getAnneeNaissance());
+                } else {
+                    throw new IllegalArgumentException("Choix invalide. Veuillez entrer 'C' ou 'D'.");
+                }
+                return result;
+            }
+        });
+}
 
     
     
