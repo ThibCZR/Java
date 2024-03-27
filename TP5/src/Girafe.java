@@ -1,6 +1,5 @@
 public class Girafe extends Animal implements lHerbivore {
-
-
+    
     public Girafe(SexeAnimal sexe, String nom, int anneeNaissance, double poids, double taille) {
         super(sexe, nom, anneeNaissance, poids, taille);        
     }
