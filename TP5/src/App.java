@@ -4,32 +4,23 @@ import java.util.Scanner;
 public class App {
     
     public static void main(String[] args) {
-        // Création de la liste d'animaux
-        ArrayList<Animal> Animaux = new ArrayList<>();
 
+        ArrayList<Animal> Animaux = new ArrayList<>();
         // Ajout des éléphants
-        Elephant elephantAdulteMaleAfrique = new Elephant(SexeAnimal.Masculin, "DJUMBO", 2000, 5000, 3.5, Continent.Afrique);
-        Elephant elephantJeuneFemelleAsie = new Elephant(SexeAnimal.Feminin, "ASIII", 2020, 2000, 2.0, Continent.Asie);
-        Animaux.add(elephantAdulteMaleAfrique);
-        Animaux.add(elephantJeuneFemelleAsie);
+        Animaux.add(new Elephant(SexeAnimal.Masculin, "Djumbo", 1994, 6000, 3.5, Continent.Afrique));
+        Animaux.add(new Elephant(SexeAnimal.Feminin, "Asiii", 2018, 1500, 2.0, Continent.Asie));
 
         // Ajout des girafes
-        Girafe girafeAdulteMale = new Girafe(SexeAnimal.Masculin, "Pascal", 2019, 600, 3.5);
-        Girafe girafeJeuneFemelle = new Girafe(SexeAnimal.Feminin, "Sophie", 2022, 300, 2.0);
-        Animaux.add(girafeAdulteMale);
-        Animaux.add(girafeJeuneFemelle);
+        Animaux.add(new Girafe(SexeAnimal.Masculin, "Pascal", 2004, 1900, 5.5));
+        Animaux.add(new Girafe(SexeAnimal.Feminin, "Sophie", 2021, 400, 2.8));
 
         // Ajout des serpents
-        Serpent serpentAdulteMale = new Serpent(SexeAnimal.Masculin, "Sonny", 2020, 1.1, 1, EspeceSerpent.A_Sonnette);
-        Serpent serpentJeuneFemelle = new Serpent(SexeAnimal.Feminin, "Bois", 2023, 300, 8.5, EspeceSerpent.Boa);
-        Animaux.add(serpentAdulteMale);
-        Animaux.add(serpentJeuneFemelle);
+        Animaux.add(new Serpent(SexeAnimal.Masculin, "Sonny", 2020, 1.1, 1, EspeceSerpent.A_Sonnette));
+        Animaux.add(new Serpent(SexeAnimal.Feminin, "Bois", 2023, 300, 8.5, EspeceSerpent.Boa));
 
         // Ajout des ours
-        Ours oursAdulteMale = new Ours(SexeAnimal.Masculin, "Teddy", 2014, 500, 3.0, EspeceOurs.Polaire);
-        Ours oursJeuneFemelle = new Ours(SexeAnimal.Feminin, "Andromeda", 2022, 80, 8.5, EspeceOurs.Brun);
-        Animaux.add(oursAdulteMale);
-        Animaux.add(oursJeuneFemelle);
+        Animaux.add(new Ours(SexeAnimal.Masculin, "Teddy", 2014, 500, 3.0, EspeceOurs.Polaire));
+        Animaux.add(new Ours(SexeAnimal.Feminin, "Andromeda", 2022, 80, 8.5, EspeceOurs.Brun));
 
         ZOO zoo = new ZOO();
         Scanner scanner = new Scanner(System.in);

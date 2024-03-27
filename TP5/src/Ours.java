@@ -28,9 +28,9 @@ public class Ours extends Animal implements lCarnivore, lHerbivore {
     @Override
     public String cri() {
         if (espece.equals(EspeceOurs.Polaire)){
-            return "Grognement fort";
+            return "GRRRRRRRRRRRRRR";
         } else {
-            return "Grognement";
+            return "Grrrrrrrrrrrrrr";
         } 
     }
 
@@ -67,19 +67,10 @@ public class Ours extends Animal implements lCarnivore, lHerbivore {
     @Override
     public String toString() {
         String type = getClass().getSimpleName();
-        return 
-                "\nNom : '" + nom + '\'' +
-                "\nAnnée de Naissance : " + anneeNaissance +
-                "\nPoids : " + poids + " " + UM_POIDS +               
-                "\nSexe : " + sexe +
-                "\nTaille : " + taille + " " + UM_TAILLE +
-                "\nAge : " + getAge() + UM_AGE +
-                "\nAdulte : " + estAdulte() +
-                "\nType : " + type +
-                "\nEspèce : " + espece +
-                "\nCri : " + cri() +                
-                "\n" + nom + " mange "  + proiesPreferees() + " en quantité " + qtteViandeSemaine() + UM_POIDS + " par jour. " + type + " " + espece + " " + tue() +
-                "\nson régime contient aussi " + plantePreferee() + " en quantité " + qttePlanteJour() + UM_POIDS + " par jour";
-    }   
+        return super.toString() +                
+            "\nEspèce : " + espece +             
+            "\n" + nom + " mange "  + proiesPreferees() + " en quantité " + qtteViandeSemaine() + UM_POIDS + " par jour. " + type + " " + espece + " " + tue() +
+            "\nson régime contient aussi " + plantePreferee() + " en quantité " + qttePlanteJour() + UM_POIDS + " par jour";
+}   
 
 }

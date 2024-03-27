@@ -9,7 +9,7 @@ public class Elephant extends Animal{
 
     @Override
     public String cri() {
-        return "Barrit";
+        return "HUUUUUUUUUUUUUM";
     }
 
     @Override
@@ -38,7 +38,7 @@ public class Elephant extends Animal{
     public String toString() {
 
         String infoSupplementaires = "";
-        String type = getClass().getSimpleName();
+        
 
         if (origine == Continent.Afrique) {
             infoSupplementaires += "Eléphant d'Afrique";
@@ -51,16 +51,7 @@ public class Elephant extends Animal{
                 infoSupplementaires += "";
             }
         }
-        return "Animal :" +
-                "\nNom : " + nom  +
-                "\nAnnée de Naissance : " + anneeNaissance +
-                "\nPoids : " + poids + " " + UM_POIDS +               
-                "\nSexe : " + sexe +
-                "\nTaille : " + taille + " " + UM_TAILLE +
-                "\nAge : " + getAge() + UM_AGE +
-                "\nAdulte : " + estAdulte() +
-                "\nType : " + type +
-                "\nCri : " + cri() + " " + 
+        return super.toString() +          
                 "\nOrigine : " + origine +                
                 "\nInfo Supplémentaire : " + infoSupplementaires +
                 "\n" + nom + " mange " + plantePreferee() + " en quantité " + qttePlanteJour() + UM_POIDS  + " par jour";

@@ -8,9 +8,9 @@ public class Girafe extends Animal implements lHerbivore {
     public String cri() {
 
         if (estAdulte() == true){
-            return "Meugle";
+            return "Muuuuuuuuuuuuuu";            
         } else {
-            return "Meugle fort";
+            return "MUUUUUUUUUUUUUU";
         }
     }
 
@@ -34,17 +34,7 @@ public class Girafe extends Animal implements lHerbivore {
 
     @Override
     public String toString() {
-        String type = getClass().getSimpleName();
-        return "Animal :" +
-                "\nNom : '" + nom + '\'' +
-                "\nAnnée de Naissance : " + anneeNaissance +
-                "\nPoids : " + poids + " " + UM_POIDS +               
-                "\nSexe : " + sexe +
-                "\nTaille : " + taille + " " + UM_TAILLE +
-                "\nAge : " + getAge() + UM_AGE +
-                "\nAdulte : " + estAdulte() +
-                "\nType : " + type +
-                "\nCri : " + cri() +
+        return super.toString()+
                 "\n" + nom + " mange " + plantePreferee() + " en quantité " + qttePlanteJour() + UM_POIDS  + " par jour";
     }    
 

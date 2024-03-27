@@ -93,12 +93,16 @@ public abstract class Animal {
     }
 
     public String toString() {
-        return "Animal{" +
-                "anneeNaissance=" + anneeNaissance +
-                ", nom='" + nom + '\'' +
-                ", poids=" + poids + " " + UM_POIDS +
-                ", sexe=" + sexe +
-                ", taille=" + taille + " " + UM_TAILLE +
-                '}';
+        String type = getClass().getSimpleName();
+        return "Animal :" +
+            "\nNom : " + nom  +
+            "\nAnnée de Naissance : " + anneeNaissance +
+            "\nPoids : " + poids + " " + UM_POIDS +               
+            "\nSexe : " + sexe +
+            "\nTaille : " + taille + " " + UM_TAILLE +
+            "\nAge : " + getAge() + UM_AGE +
+            "\nAdulte : " + estAdulte() +
+            "\nType : " + type +
+            "\nCri : " + cri();
     }
 }

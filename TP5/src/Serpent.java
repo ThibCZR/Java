@@ -36,11 +36,11 @@ public class Serpent extends Animal implements lCarnivore{
     @Override
     public String cri() {
         if (espece.equals(EspeceSerpent.Crotale) || espece.equals(EspeceSerpent.A_Sonnette)) {
-            return "Bruit de grelot";
+            return "GUILING GUILING";
         } else if (espece.equals(EspeceSerpent.Cornu) || espece.equals(EspeceSerpent.Echide)) {
-            return "Crissement d'avertissement";
+            return "Criiiiiiiiiiiii";
         } else {
-            return "Sifflement";
+            return "HUIIIIIIIIIIIII";
         } 
     }
 
@@ -84,18 +84,9 @@ public class Serpent extends Animal implements lCarnivore{
     @Override
     public String toString() {
         String type = getClass().getSimpleName();
-        return 
-                "\nNom : '" + nom + '\'' +
-                "\nAnnée de Naissance : " + anneeNaissance +
-                "\nPoids : " + poids + " " + UM_POIDS +               
-                "\nSexe : " + sexe +
-                "\nTaille : " + taille + " " + UM_TAILLE +
-                "\nAge : " + getAge() + UM_AGE +
-                "\nAdulte : " + estAdulte() +
-                "\nType : " + type +
+        return super.toString() +                
                 "\nEspèce : " + espece +
-                "\nVenimeux : " + getVenimeux() +
-                "\nCri : " + cri() +                
+                "\nVenimeux : " + getVenimeux() +              
                 "\n" + nom + " mange "  + proiesPreferees() + " ou équivalents en quantité " + qtteViandeSemaine() + UM_POIDS + " par jour. " + type + " " + espece + " " + tue();
     }    
 
