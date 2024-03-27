@@ -7,5 +7,11 @@ public class ZOO {
             System.out.println(animal.toString() + "\n");
         }
     }
+
+    public void faitCrierSesAnimaux(ArrayList<Animal> Animaux) {
+        for (Animal animal : Animaux) {
+            System.out.println(animal.cri() + "\n");
+        }
+    }
     
 }
