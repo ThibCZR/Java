@@ -18,6 +18,22 @@ public class Elephant extends Animal{
         return getAge() >= 13;
     }
 
+    public String plantePreferee(){
+        if (getAge() < 5){
+            return "lait";
+        }else {
+            if(origine == Continent.Afrique){
+                return "feuillages et arbustes";
+            } else {
+                return "herbes";
+            }
+        }
+    }
+
+    public double qttePlanteJour(){
+       return poids * 0.25;
+    }
+
     @Override
     public String toString() {
 
@@ -36,7 +52,7 @@ public class Elephant extends Animal{
             }
         }
         return "Animal :" +
-                "\nNom : '" + nom + '\'' +
+                "\nNom : " + nom  +
                 "\nAnnée de Naissance : " + anneeNaissance +
                 "\nPoids : " + poids + " " + UM_POIDS +               
                 "\nSexe : " + sexe +
@@ -46,7 +62,8 @@ public class Elephant extends Animal{
                 "\nType : " + type +
                 "\nCri : " + cri() + " " + 
                 "\nOrigine : " + origine +                
-                "\nInfo Supplémentaire : " + infoSupplementaires;
+                "\nInfo Supplémentaire : " + infoSupplementaires +
+                "\n" + nom + " mange " + plantePreferee() + " en quantité " + qttePlanteJour() + UM_POIDS  + " par jour";
     }    
 }   
 

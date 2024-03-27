@@ -1,4 +1,4 @@
-public class Girafe extends Animal {
+public class Girafe extends Animal implements lHerbivore {
 
 
     public Girafe(SexeAnimal sexe, String nom, int anneeNaissance, double poids, double taille) {
@@ -21,6 +21,18 @@ public class Girafe extends Animal {
         return getAge() >= 4;
     }
 
+    public String plantePreferee(){
+        if (getAge() < 2){
+            return "lait";
+        }else {
+        return "acacias";
+        }
+    }
+
+    public double qttePlanteJour(){
+       return poids * 0.05;
+    }
+
     @Override
     public String toString() {
         String type = getClass().getSimpleName();
@@ -33,6 +45,9 @@ public class Girafe extends Animal {
                 "\nAge : " + getAge() + UM_AGE +
                 "\nAdulte : " + estAdulte() +
                 "\nType : " + type +
-                "\nCri : " + cri();
+                "\nCri : " + cri() +
+                "\n" + nom + " mange " + plantePreferee() + " en quantité " + qttePlanteJour() + UM_POIDS  + " par jour";
     }    
+
+
 }
