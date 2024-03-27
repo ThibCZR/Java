@@ -35,17 +35,17 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         int choix;
         do {
-            System.out.println("-----------------------------");
-            System.out.println("MENU ZOO CPE");
-            System.out.println("-----------------------------");
-            System.out.println("0. Quitter");
-            System.out.println("1. Affichage des animaux");
-            System.out.println("2. Cri des animaux");
-            System.out.println("3. Repas d'un animal");
-            System.out.println("4. Tuerie de carnivore");
-            System.out.println("5. Suppression d'un animal");
-            System.out.println("6. Trier les animaux par âge");
-            System.out.println("-----------------------------");
+            System.out.println("+---------------------------------+");
+            System.out.println("|       MENU ZOO CPE              |");
+            System.out.println("+---------------------------------+  ");
+            System.out.println("|   0. Quitter                    |");
+            System.out.println("|   1. Affichage des animaux      |");
+            System.out.println("|   2. Cri des animaux            |");
+            System.out.println("|   3. Repas d'un animal          |");
+            System.out.println("|   4. Tuerie de carnivore        |");
+            System.out.println("|   5. Suppression d'un animal    |");
+            System.out.println("|   6. Trier les animaux par âge  |");
+            System.out.println("+---------------------------------+");
             System.out.print("Choix : ");
             choix = scanner.nextInt();
 
@@ -57,16 +57,22 @@ public class App {
                     zoo.afficherAnimaux(Animaux);
                     break;
                 case 2:
-                    
+                    zoo.faitCrierSesAnimaux(Animaux);
                     break;
                 case 3:
-                   
+                    System.out.print("Entrez le nom de l'animal : ");
+                    String nomAnimal = scanner.next().toUpperCase(); 
+                    System.out.println(zoo.rechercherAnimal(Animaux, nomAnimal));
                     break;
                 case 4:
-                   
+                    System.out.println("Les carnivores du zoo tuent :");
+                    System.out.println(zoo.tuerieAnimal(Animaux));
                     break;
                 case 5:
-                    
+                    System.out.print("Entrez le nom de l'animal à supprimer : ");
+                    String nomASupprimer = scanner.next().toUpperCase();
+                    String resultatSuppression = zoo.supprimerAnimal(Animaux, nomASupprimer);
+                    System.out.println(resultatSuppression);
                     break;
                 case 6:
                     
