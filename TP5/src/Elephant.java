@@ -1,5 +1,3 @@
-import java.util.Calendar;
-
 public class Elephant extends Animal{
     
     private Continent origine;
@@ -26,18 +24,35 @@ public class Elephant extends Animal{
         return getAge() >= 13;
     }
 
-    @Override 
-    public String toString(){
-        return "Animal{" +
-                "anneeNaissance=" + anneeNaissance +
-                ", nom='" + nom + '\'' +
-                ", poids=" + poids + " " + UM_POIDS +
-                ", sexe=" + sexe +
-                ", taille=" + taille + " " + UM_TAILLE +
-                ", cri=" + cri() + " " + 
-                ", origine=" + origine +
-                ", origine=" + estAdulte() +
-                '}';
-    }
+    @Override
+    public String toString() {
+
+        String infoSupplementaires = "";
+        String type = getClass().getSimpleName();
+
+        if (origine == Continent.Afrique) {
+            infoSupplementaires += "Eléphant d'Afrique";
+            infoSupplementaires += " avec de très grandes oreilles";
+            infoSupplementaires += (sexe == SexeAnimal.Feminin ? " " : " et défenses");
+        } else {
+            infoSupplementaires += "Eléphant d'Asie";
+            infoSupplementaires += " avec de petites oreilles";
+            if (sexe == SexeAnimal.Feminin) {
+                infoSupplementaires += "";
+            }
+        }
+        return "Animal :" +
+                "\nNom : '" + nom + '\'' +
+                "\nAnnée de Naissance : " + anneeNaissance +
+                "\nPoids : " + poids + " " + UM_POIDS +               
+                "\nSexe : " + sexe +
+                "\nTaille : " + taille + " " + UM_TAILLE +
+                "\nAge : " + getAge() +
+                "\nAdulte : " + estAdulte() +
+                "\nType : " + type +
+                "\nCri : " + cri() + " " + 
+                "\nOrigine : " + origine +                
+                "\nInfo Supplémentaire : " + infoSupplementaires;
+    }    
 }   
 
