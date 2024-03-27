@@ -10,12 +10,7 @@ public abstract class Animal {
     protected final String UM_POIDS = "kg";
     protected final String UM_TAILLE = "m";
 
-    public enum SexeAnimal {
-        Feminin,
-        Masculin,
-        Hermaphrodite
-    }
-
+ 
     public Animal(SexeAnimal sexe, String nom, int anneeNaissance, double poids, double taille) {
         // Vérification de l'année de naissance
         int anneeActuelle = Calendar.getInstance().get(Calendar.YEAR);
