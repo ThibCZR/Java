@@ -11,9 +11,6 @@ public class Serpent extends Animal implements lCarnivore{
         this.espece = espece;
     }
 
-    public boolean isVenimeux() {
-        return this.venimeux;
-    }
 
     public boolean getVenimeux() {
         return this.venimeux;

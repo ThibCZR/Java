@@ -26,17 +26,19 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         int choix;
         do {
-            System.out.println("+----------------------------------+");
-            System.out.println("|          MENU ZOO CPE            |");
-            System.out.println("+----------------------------------+");
-            System.out.println("|   0. Quitter                     |");
-            System.out.println("|   1. Affichage des animaux       |");
-            System.out.println("|   2. Cri des animaux             |");
-            System.out.println("|   3. Repas d'un animal           |");
-            System.out.println("|   4. Tuerie de carnivore         |");
-            System.out.println("|   5. Suppression d'un animal     |");
-            System.out.println("|   6. Trier les animaux par âge   |");
-            System.out.println("+----------------------------------+");
+            System.out.println("+-----------------------------------+");
+            System.out.println("|            MENU ZOO CPE           |");
+            System.out.println("+-----------------------------------+");
+            System.out.println("|   0. Quitter                      |");
+            System.out.println("|   1. Affichage des animaux        |");
+            System.out.println("|   2. Cri des animaux              |");
+            System.out.println("|   3. Repas d'un animal            |");
+            System.out.println("|   4. Tuerie de carnivore          |");
+            System.out.println("|   5. Suppression d'un animal      |");
+            System.out.println("|   6. Trier les animaux par âge    |");
+            System.out.println("|   7. Trier les animaux par poids  |");
+            System.out.println("|   8. Trier les animaux par noms   |");
+            System.out.println("+-----------------------------------+");
             System.out.print("Choix : ");
             choix = scanner.nextInt();
 
@@ -85,10 +87,28 @@ public class App {
                     System.out.println("|    DU PLUS JEUNE AU PLUS VIEUX   |");
                     System.out.println("+----------------------------------+");
                     System.out.print("Entrez 'C' pour un tri croissant ou 'D' pour un tri décroissant : ");
-                    char lettreChoisi = scanner.next().toUpperCase().charAt(0);
-                    zoo.trierAnimauxParDateNaissance(Animaux, lettreChoisi);
+                    char lettre1 = scanner.next().toUpperCase().charAt(0);
+                    zoo.trierAnimauxParDateNaissance(Animaux, lettre1);
                     zoo.afficherAnimaux(Animaux);
                     break;
+                case 7:
+                    System.out.println("+----------------------------------+");
+                    System.out.println("|     TRI PAR POIDS DES ANIMAUX    |");
+                    System.out.println("+----------------------------------+");
+                    System.out.print("Entrez 'C' pour un tri croissant ou 'D' pour un tri décroissant : ");
+                    char choixTriPoids = scanner.next().toUpperCase().charAt(0);
+                    zoo.trierAnimauxParPoids(Animaux, choixTriPoids);
+                    zoo.afficherAnimaux(Animaux);
+                    break;
+                case 8:
+                    System.out.println("+----------------------------------+");
+                    System.out.println("|     TRI PAR NOMS DES ANIMAUX     |");
+                    System.out.println("+----------------------------------+");
+                    System.out.print("Entrez 'C' pour un tri croissant ou 'D' pour un tri décroissant : ");
+                    char choixTriNom = scanner.next().toUpperCase().charAt(0);
+                    zoo.trierAnimauxParNom(Animaux, choixTriNom);
+                    zoo.afficherAnimaux(Animaux);
+                    break;       
                 default:
                     System.out.println("Choix invalide !");
             }
