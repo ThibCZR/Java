@@ -1,30 +1,39 @@
 public class Humain extends Animal implements lOmnivore {
+    private Continent origine; 
+
     public Humain(SexeAnimal sexe, String nom, int anneeNaissance, double poids, double taille, Continent origine) {
         super(sexe, nom, anneeNaissance, poids, taille);
-
+        this.origine = origine;
     }
 
     @Override
     public String cri() {
-        return "AIIIILLLLLLLLLL";
+        if(estAdulte() == false){
+            return "OUIINNNNNNNNNNN";
+        } else {
+            return "AIIIILLLLLLLLLL";
+        }
     }         
 
     @Override
-    public boolean estAdulte() {
-        
+    public boolean estAdulte() {        
         return getAge() >= 18;
     }
 
     public String mangerAvec(){
-        return "";
+        if(origine == Continent.Asie){
+            return "Baguettes";
+        } else {
+            return "Couverts";
+        }
     }
 
     public double qtteViandeSemaine(){
-        return 3;
+        return 1;
      }
  
      public double qttePlanteJour(){
-         return poids * 0.035;
+         return 0.5;
      }
  
      public double qtteTotalJour(){
@@ -33,16 +42,25 @@ public class Humain extends Animal implements lOmnivore {
  
  
      public String proiesPreferees(){
-        return "";
-        
+        return "boeuf";        
      }
  
      public String plantePreferee(){
-         return "fruits et racines";
+         return "soja";
      }
  
      public String tue() {
-         return "mort sa proie";
+         return "amenant ses proies à l'abatoire";
      }
+
+     @Override
+     public String toString() {
+         String type = getClass().getSimpleName();
+         return super.toString() +                
+             "\nEspèce : " + origine +
+             "\n" + nom + " mange " + proiesPreferees() + " en quantité " + qtteViandeSemaine() + UM_POIDS  + " par jour. Le " + type + " " + tue() +
+             "\nson régime contient aussi du  " + plantePreferee() + " quantité " + qttePlanteJour() + " par jour."  +
+             "\nIl mange" +  mangerAvec();           
+     }   
  
 }

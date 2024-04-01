@@ -1,7 +1,5 @@
-public class Elephant extends Animal{
-    
+public class Elephant extends Animal{    
     private Continent origine; 
-    
 
     public Elephant(SexeAnimal sexe, String nom, int anneeNaissance, double poids, double taille, Continent origine) {
         super(sexe, nom, anneeNaissance, poids, taille);

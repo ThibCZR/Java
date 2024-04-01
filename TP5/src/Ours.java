@@ -49,7 +49,7 @@ public class Ours extends Animal implements lCarnivore, lHerbivore {
 
     public String proiesPreferees(){
         String proiesOurs = "insectes, oiseaux, petits mammifères";
-        if(espece.equals(EspeceOurs.Polaire) || espece.equals(EspeceOurs.Brun)){            
+        if(espece.equals(EspeceOurs.Polaire) || espece.equals(EspeceOurs.Noir)){            
             return proiesOurs + ", phoques, saumons";
         } else {
             return proiesOurs;
@@ -61,7 +61,7 @@ public class Ours extends Animal implements lCarnivore, lHerbivore {
     }
 
     public String tue() {
-        return "mort sa proie";
+        return "mordant sa proie";
     }
 
     @Override
@@ -71,6 +71,6 @@ public class Ours extends Animal implements lCarnivore, lHerbivore {
             "\nEspèce : " + espece +             
             "\n" + nom + " mange "  + proiesPreferees() + " en quantité " + qtteViandeSemaine() + UM_POIDS + " par jour. " + type + " " + espece + " " + tue() +
             "\nson régime contient aussi " + plantePreferee() + " en quantité " + qttePlanteJour() + UM_POIDS + " par jour";
-}   
+    }   
 
 }

@@ -72,9 +72,9 @@ public class Serpent extends Animal implements lCarnivore{
             return "mort sa proie";
         } else {
             if (espece == EspeceSerpent.Couleuvre) {
-                return "avale sa proie vivante";
+                return "avalant sa proie vivante";
             } else {
-                return "etouffe sa proie";}
+                return "etouffant sa proie";}
             }
         }
 

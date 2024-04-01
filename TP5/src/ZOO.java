@@ -26,7 +26,7 @@ public class ZOO {
                 }
                 if (animal instanceof lCarnivore) {
                     lCarnivore carnivore = (lCarnivore) animal;
-                    result.append(animal.getNom() + " mange " + carnivore.proiesPreferees() + " en quantité " + carnivore.qtteViandeSemaine() + " kg par jour et tue par " + carnivore.tue() + ".\n");
+                    result.append(animal.getNom() + " mange " + carnivore.proiesPreferees() + " en quantité " + carnivore.qtteViandeSemaine() + " kg par jour et tue en " + carnivore.tue() + ".\n");
                 }
             }
         }

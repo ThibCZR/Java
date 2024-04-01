@@ -35,7 +35,7 @@ public class Girafe extends Animal implements lHerbivore {
     @Override
     public String toString() {
         return super.toString()+
-                "\n" + nom + " mange " + plantePreferee() + " en quantité " + qttePlanteJour() + UM_POIDS  + " par jour";
+            "\n" + nom + " mange " + plantePreferee() + " en quantité " + qttePlanteJour() + UM_POIDS  + " par jour";
     }    
 
 
