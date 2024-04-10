@@ -2,10 +2,10 @@ package fr.cpe.appzoo.exercice2;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import fr.cpe.appzoo.common.Animal;
 import fr.cpe.appzoo.common.Continent;
 import fr.cpe.appzoo.common.SexeAnimal;
 import fr.cpe.appzoo.common.ZOO;
-import fr.cpe.appzoo.exercice1.Animal;
 import fr.cpe.appzoo.exercice1.Elephant;
 import fr.cpe.appzoo.exercice1.EspeceOurs;
 import fr.cpe.appzoo.exercice1.EspeceSerpent;

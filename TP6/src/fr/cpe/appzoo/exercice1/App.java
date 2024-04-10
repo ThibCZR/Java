@@ -2,6 +2,7 @@ package fr.cpe.appzoo.exercice1;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import fr.cpe.appzoo.common.Animal;
 import fr.cpe.appzoo.common.Continent;
 import fr.cpe.appzoo.common.SexeAnimal;
 import fr.cpe.appzoo.common.ZOO;

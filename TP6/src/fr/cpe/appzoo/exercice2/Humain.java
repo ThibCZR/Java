@@ -1,8 +1,8 @@
 package fr.cpe.appzoo.exercice2;
 
+import fr.cpe.appzoo.common.Animal;
 import fr.cpe.appzoo.common.Continent;
 import fr.cpe.appzoo.common.SexeAnimal;
-import fr.cpe.appzoo.exercice1.Animal;
 
 public class Humain extends Animal implements lOmnivore {
     private Continent origine; 

@@ -1,7 +1,5 @@
-package fr.cpe.appzoo.exercice1;
+package fr.cpe.appzoo.common;
 import java.util.Calendar;
-
-import fr.cpe.appzoo.common.SexeAnimal;
 
 public abstract class Animal {
     protected int anneeNaissance;

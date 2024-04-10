@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-import fr.cpe.appzoo.exercice1.Animal;
 import fr.cpe.appzoo.exercice1.lCarnivore;
 import fr.cpe.appzoo.exercice1.lHerbivore;
 

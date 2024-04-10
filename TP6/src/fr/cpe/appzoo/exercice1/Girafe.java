@@ -1,5 +1,6 @@
 package fr.cpe.appzoo.exercice1;
 
+import fr.cpe.appzoo.common.Animal;
 import fr.cpe.appzoo.common.SexeAnimal;
 
 public class Girafe extends Animal implements lHerbivore {
