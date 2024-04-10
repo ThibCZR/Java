@@ -1,4 +1,5 @@
 package fr.cpe.appzoo.exercice2;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -34,10 +35,6 @@ public class AppExo2 {
         // Ajout des ours
         Animaux.add(new Ours(SexeAnimal.Masculin, "Teddy", 2014, 500, 3.0, EspeceOurs.Polaire));
         Animaux.add(new Ours(SexeAnimal.Feminin, "Andromeda", 2022, 80, 8.5, EspeceOurs.Brun));
-
-         // Ajout des humains
-         Animaux.add(new Humain(SexeAnimal.Masculin, "Vincent", 1999, 80, 1.75, Continent.Europe));
-         Animaux.add(new Humain(SexeAnimal.Feminin, "Ying", 2016, 12, 1.10, Continent.Asie));
 
         ZOO zoo = new ZOO();
         Scanner scanner = new Scanner(System.in);
@@ -169,13 +166,13 @@ public class AppExo2 {
                                 throw new IllegalArgumentException("Animal non pris en charge : " + nouvelAnimal);
                         }
                     
-                        System.out.println("Entrez son sexe (feminin/masculin):");
+                        System.out.println("Entrez son sexe (f/m):");
                         String inputSexe = scanner.next().toLowerCase();
                         switch (inputSexe) {
-                            case "feminin":
+                            case "f":
                                 sexe = SexeAnimal.Feminin;
                                 break;
-                            case "masculin":
+                            case "m":
                                 sexe = SexeAnimal.Masculin;
                                 break;
                             default:
@@ -195,55 +192,96 @@ public class AppExo2 {
                         System.out.println("Entrez sa taille :");
                         taille = scanner.nextDouble();
                     
+                        Continent continentE = null;
+                        EspeceOurs especeO = null;
+                        EspeceSerpent especeS = null;
+                        Continent continentH = null;
                         switch (nouvelAnimal) {
                             case 1:
-                                System.out.println("Entrez son continent (Afrique/Asie) :");
-                                String continentE = scanner.next().toLowerCase();
-                                switch(continentE){
-                                    case 1:
-                                        
+                                System.out.println("Entrez son continent 1 ou 2 (1:Afrique/2:Asie) :");
+                                String continentElephant = scanner.next().toLowerCase();
+                                switch(continentElephant){
+                                    case "1":
+                                        continentE = Continent.Afrique;
                                         break;
-                                    case 2:
+                                    case "2":
+                                        continentE = Continent.Asie;
                                     break;
-                                    case 3:
-                                    break;
-                                    case 4:
-                                    break;
-
                                 }
                                 zoo.addAnimal(Animaux, new Elephant(sexe, nom, dateNaiss, poids, taille, continentE));
                                 break;
                             case 2:
-                                System.out.println("Entrez son espèce (Brun/Polaire/Noir) :");
-                                String especeOurs = scanner.next().toLowerCase();
-                                zoo.addAnimal(Animaux, new Ours(sexe, nom, dateNaiss, poids, taille, EspeceOurs.valueOf(especeOurs)));
+                                System.out.println("Entrez son espèce 1,2 ou 3 (1:Brun/2:Polaire/3:Noir) :");
+                                String especeOursString = scanner.next().toLowerCase();
+                                switch(especeOursString){
+                                    case "1":
+                                        especeO = EspeceOurs.Brun;
+                                        break;
+                                    case "2":
+                                        especeO = EspeceOurs.Polaire;                                    
+                                        break;
+                                    case "3":
+                                        especeO = EspeceOurs.Noir;                                    
+                                        break;
+                                }
+                                zoo.addAnimal(Animaux, new Ours(sexe, nom, dateNaiss, poids, taille, especeO));
                                 break;
                             case 3:
                                 zoo.addAnimal(Animaux, new Girafe(sexe, nom, dateNaiss, poids, taille));
                                 break;
                             case 4:
-                                System.out.println("Entrez son espèce (Boa/Couleuvre/Crotale/A_Sonnette/Cornu/Echide");
-                                String especeSerpent = scanner.next().toLowerCase();
-                                zoo.addAnimal(Animaux, new Serpent(sexe, nom, dateNaiss, poids, taille, EspeceSerpent.valueOf(especeSerpent)));
+                                System.out.println("Entrez son espèce (1:Boa/2:Couleuvre/3:Crotale/4:A_Sonnette/5:Cornu/6:Echide");
+                                String especeSerpentString = scanner.next().toLowerCase();
+                                switch(especeSerpentString){
+                                    case "1":
+                                        especeS = EspeceSerpent.Boa;
+                                        break;
+                                    case "2":
+                                        especeS = EspeceSerpent.Couleuvre;                                 
+                                        break;
+                                    case "3":
+                                        especeS = EspeceSerpent.Crotale;                                 
+                                        break;
+                                    case "4":
+                                        especeS = EspeceSerpent.A_Sonnette;                                 
+                                        break;
+                                    case "5":
+                                        especeS = EspeceSerpent.Cornu;                                 
+                                        break;
+                                    case "6":
+                                        especeS = EspeceSerpent.Echide;                                 
+                                        break;
+                                }
+                                zoo.addAnimal(Animaux, new Serpent(sexe, nom, dateNaiss, poids, taille, especeS));
                                 break;
                             case 5:
-                                System.out.println("Entrez son continent (Afrique/Asie/Europe/Amerique) :");
-                                String continentH = scanner.next();
-                                zoo.addAnimal(Animaux, new Humain(sexe, nom, dateNaiss, poids, taille, Continent.valueOf(continentH)));
+                                System.out.println("Entrez son continent (1:Afrique/2:Asie/3:Europe/4:Amerique) :");
+                                String continentHumainString = scanner.next().toLowerCase();
+                                switch(continentHumainString){
+                                    case "1":
+                                        continentH = Continent.Afrique;
+                                        break;
+                                    case "2":
+                                        continentH = Continent.Asie;                                 
+                                        break;
+                                    case "3":
+                                        continentH = Continent.Europe;                                 
+                                        break;
+                                    case "4":
+                                        continentH = Continent.Amerique;                                 
+                                        break;
+                                }
+                                zoo.addAnimal(Animaux, new Humain(sexe, nom, dateNaiss, poids, taille, continentH));
                                 break;
                         }
+                        
                     break;                
-                    
-                default:
-                System.out.println("Choix invalide !");      
-                }
+                }   
             } catch (Exception e) {
                 System.out.println("Une erreur est survenue : " + e.getMessage());
             }
-            
         } while (choix != 0);
         
         scanner.close();
     } 
-    
 }
