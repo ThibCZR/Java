@@ -1,4 +1,5 @@
 package fr.cpe.appzoo.common;
+import java.time.LocalDate;
 import java.util.Calendar;
 
 public abstract class Animal {
@@ -15,23 +16,35 @@ public abstract class Animal {
         return this.anneeNaissance;
     }
 
-    public void setAnneeNaissance(int anneeNaissance) {
-        this.anneeNaissance = anneeNaissance;
+    public void setAnneeNaissance(int anneeNaissance) throws CaMarchePasException {
+        int anneeActuelle = LocalDate.now().getYear();
+        if (anneeNaissance < anneeActuelle) {
+            this.anneeNaissance = anneeNaissance;
+        } else {
+            throw new CaMarchePasException("L'année de naissance doit être inférieure à l'année actuelle.");
+        }
     }
 
     public String getNom() {
         return this.nom;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setNom(String nom) throws CaMarchePasException {
+        if (nom == null || nom.isEmpty() ) {
+            throw new CaMarchePasException("Le nom ne doit pas être nul, ni être vide.");
+        } else {            
+            this.nom = nom;
+        }
     }
 
     public double getPoids() {
         return this.poids;
     }
 
-    public void setPoids(double poids) {
+    public void setPoids(double poids) throws CaMarchePasException {
+        if (poids < 0) {
+            throw new CaMarchePasException("Le poids ne peut pas être négatif.");
+        }
         this.poids = poids;
     }
 
@@ -47,7 +60,10 @@ public abstract class Animal {
         return this.taille;
     }
 
-    public void setTaille(double taille) {
+    public void setTaille(double taille) throws CaMarchePasException {
+        if (taille < 0) {
+            throw new CaMarchePasException("Le taille ne peut pas être négatif.");
+        }
         this.taille = taille;
     }
 
@@ -57,21 +73,8 @@ public abstract class Animal {
         return anneeActuelle - anneeNaissance;
     }
 
-    public Animal(SexeAnimal sexe, String nom, int anneeNaissance, double poids, double taille) {
-       
-        int anneeActuelle = Calendar.getInstance().get(Calendar.YEAR);
-        if (anneeNaissance > anneeActuelle)
-            throw new IllegalArgumentException("L'année de naissance ne peut pas être dans le futur");
-        
-    
-        if (nom == null || nom.isEmpty())
-            throw new IllegalArgumentException("Le nom ne peut pas être nul ou vide");
-        this.nom = nom.toUpperCase(); // Mettre le nom en majuscule
-        
-       
-        if (poids < 0 || taille < 0)
-            throw new IllegalArgumentException("Le poids et la taille ne peuvent pas être négatifs");
-
+    public Animal(SexeAnimal sexe, String nom, int anneeNaissance, double poids, double taille) throws CaMarchePasException {     
+        setNom(nom.toUpperCase());
         setSexe(sexe);
         setAnneeNaissance(anneeNaissance);
         setPoids(poids);

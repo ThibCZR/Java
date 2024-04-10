@@ -1,11 +1,12 @@
 package fr.cpe.appzoo.exercice1;
 
 import fr.cpe.appzoo.common.Animal;
+import fr.cpe.appzoo.common.CaMarchePasException;
 import fr.cpe.appzoo.common.SexeAnimal;
 
 public class Girafe extends Animal implements lHerbivore {
     
-    public Girafe(SexeAnimal sexe, String nom, int anneeNaissance, double poids, double taille) {
+    public Girafe(SexeAnimal sexe, String nom, int anneeNaissance, double poids, double taille) throws CaMarchePasException {
         super(sexe, nom, anneeNaissance, poids, taille);        
     }
     

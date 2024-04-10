@@ -120,9 +120,10 @@ public class ZOO {
             }
         });
     }
-    
 
-    
-    
+
+    public void addAnimal(ArrayList<Animal> animaux, Animal nouvelAnimal) {
+        animaux.add(nouvelAnimal);
+    }
     
 }

@@ -1,13 +1,14 @@
 package fr.cpe.appzoo.exercice1;
 
 import fr.cpe.appzoo.common.Animal;
+import fr.cpe.appzoo.common.CaMarchePasException;
 import fr.cpe.appzoo.common.Continent;
 import fr.cpe.appzoo.common.SexeAnimal;
 
 public class Elephant extends Animal{    
-    private Continent origine; 
+    private Continent origine;
 
-    public Elephant(SexeAnimal sexe, String nom, int anneeNaissance, double poids, double taille, Continent origine) {
+    public Elephant(SexeAnimal sexe, String nom, int anneeNaissance, double poids, double taille, Continent origine) throws CaMarchePasException {
         super(sexe, nom, anneeNaissance, poids, taille);
         this.origine = origine;
     }

@@ -1,6 +1,7 @@
 package fr.cpe.appzoo.exercice1;
 
 import fr.cpe.appzoo.common.Animal;
+import fr.cpe.appzoo.common.CaMarchePasException;
 import fr.cpe.appzoo.common.SexeAnimal;
 
 public class Ours extends Animal implements lCarnivore, lHerbivore {
@@ -15,7 +16,7 @@ public class Ours extends Animal implements lCarnivore, lHerbivore {
     }
 
 
-    public Ours(SexeAnimal sexe, String nom, int anneeNaissance, double poids, double taille, EspeceOurs espece) {
+    public Ours(SexeAnimal sexe, String nom, int anneeNaissance, double poids, double taille, EspeceOurs espece) throws CaMarchePasException {
         super(sexe, nom, anneeNaissance, poids, taille);       
         setEspece(espece);
        

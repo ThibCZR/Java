@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import fr.cpe.appzoo.common.Animal;
+import fr.cpe.appzoo.common.CaMarchePasException;
 import fr.cpe.appzoo.common.Continent;
 import fr.cpe.appzoo.common.SexeAnimal;
 import fr.cpe.appzoo.common.ZOO;
@@ -14,7 +15,7 @@ import fr.cpe.appzoo.exercice1.Serpent;
 
 public class AppExo2 {
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CaMarchePasException {
 
         ArrayList<Animal> Animaux = new ArrayList<>();
         // Ajout des éléphants

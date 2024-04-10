@@ -1,13 +1,14 @@
 package fr.cpe.appzoo.exercice2;
 
 import fr.cpe.appzoo.common.Animal;
+import fr.cpe.appzoo.common.CaMarchePasException;
 import fr.cpe.appzoo.common.Continent;
 import fr.cpe.appzoo.common.SexeAnimal;
 
 public class Humain extends Animal implements lOmnivore {
     private Continent origine; 
 
-    public Humain(SexeAnimal sexe, String nom, int anneeNaissance, double poids, double taille, Continent origine) {
+    public Humain(SexeAnimal sexe, String nom, int anneeNaissance, double poids, double taille, Continent origine) throws CaMarchePasException {
         super(sexe, nom, anneeNaissance, poids, taille);
         this.origine = origine;
     }
