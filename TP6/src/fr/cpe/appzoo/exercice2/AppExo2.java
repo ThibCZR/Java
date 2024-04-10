@@ -1,3 +1,4 @@
+package fr.cpe.appzoo.exercice2;
 import java.util.ArrayList;
 import java.util.Scanner;
 

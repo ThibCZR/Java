@@ -1,18 +1,12 @@
+package fr.cpe.appzoo.exercice1;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 import fr.cpe.appzoo.common.Continent;
 import fr.cpe.appzoo.common.SexeAnimal;
 import fr.cpe.appzoo.common.ZOO;
-import fr.cpe.appzoo.exercice1.Animal;
-import fr.cpe.appzoo.exercice1.Elephant;
-import fr.cpe.appzoo.exercice1.EspeceOurs;
-import fr.cpe.appzoo.exercice1.EspeceSerpent;
-import fr.cpe.appzoo.exercice1.Girafe;
-import fr.cpe.appzoo.exercice1.Ours;
-import fr.cpe.appzoo.exercice1.Serpent;
 
-public class AppExo2 {
+public class App {
     
     public static void main(String[] args) {
 
@@ -32,10 +26,6 @@ public class AppExo2 {
         // Ajout des ours
         Animaux.add(new Ours(SexeAnimal.Masculin, "Teddy", 2014, 500, 3.0, EspeceOurs.Polaire));
         Animaux.add(new Ours(SexeAnimal.Feminin, "Andromeda", 2022, 80, 8.5, EspeceOurs.Brun));
-
-         // Ajout des humains
-         Animaux.add(new Humain(SexeAnimal.Masculin, "Vincent", 1999, 80, 1.75, Continent.Europe));
-         Animaux.add(new Humain(SexeAnimal.Feminin, "Ying", 2016, 12, 1.10, Continent.Asie));
 
         ZOO zoo = new ZOO();
         Scanner scanner = new Scanner(System.in);
